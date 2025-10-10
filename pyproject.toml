@@ -1,0 +1,7 @@
+[project]
+name = "train-cnn-cifar100"
+version = "0.1.0"
+description = "Train CNN model on Cifar100 on AWS with Docker"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
