@@ -12,7 +12,10 @@ dependencies = [
     "numpy>=2.3.3",
     "pandas>=2.3.3",
     "pillow>=11.3.0",
+    "rich>=14.2.0",
+    "tensorboardx>=2.6.4",
     "torch>=2.8.0",
+    "torch-lr-finder>=0.2.2",
     "torchinfo>=1.8.0",
     "torchvision>=0.23.0",
 ]

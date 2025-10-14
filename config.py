@@ -23,10 +23,10 @@ input_size = (1, 3, 32, 32)
 num_workers: int = 8,
 val_split: float = 0.1
 
-learning_rate = 2.35E-04 # Found with LR finder
+learning_rate = 1.13e-01 # Found with LR finder
 weight_decay = 1e-4
 epochs = 50
-batch_size = 64
+batch_size = 128
 experiment_name = "experiment1"
 
 scheduler_type = 'one_cycle_policy'
@@ -40,8 +40,8 @@ lr_finder_kwargs = {
 
 onecycle_kwargs = {
             'lr_strategy': 'manual',  # 'conservative', 'manual'
-            'pct_start': 0.1,
+            'pct_start': 0.2,
             'anneal_strategy': 'cos',
-            'div_factor': 10.0,
-            'final_div_factor': 100.0
+            'div_factor': 100.0,
+            'final_div_factor': 1000.0
         }

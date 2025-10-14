@@ -197,13 +197,15 @@ class Cifar100LightningModule(L.LightningModule):
         Returns:
             optimizer or dict with optimizer and scheduler
         """
-        optimizer = torch.optim.AdamW(
-            self.model.parameters(), 
-            lr=self.learning_rate,
-            weight_decay=self.weight_decay,      # Add weight decay for better generalization
-            betas=(0.9, 0.999),
-            eps=1e-8
-        )
+        # optimizer = torch.optim.AdamW(
+        #     self.model.parameters(), 
+        #     lr=self.learning_rate,
+        #     weight_decay=self.weight_decay,      # Add weight decay for better generalization
+        #     betas=(0.9, 0.999),
+        #     eps=1e-8
+        # )
+
+        optimizer = torch.optim.SGD(self.model.parameters(), lr=self.learning_rate, weight_decay=self.weight_decay, momentum=0.9)
         
         if scheduler_type == 'one_cycle_policy':
             # Calculate steps_per_epoch from your scheduler
@@ -228,9 +230,9 @@ class Cifar100LightningModule(L.LightningModule):
             )
             
             print(f"🔄 Recreated OneCycleLR Scheduler:")
-            print(f"   Max LR: {2.35e-04:.2e}")
-            print(f"   Initial LR: {2.35e-06:.2e}")
-            print(f"   Total steps: {35200}")
+            print(f"   Max LR: {self.learning_rate:.4e}")
+            print(f"   Initial LR: {self.learning_rate/100.0:.4e}")
+            print(f"   Total steps: {total_steps}")
             print(f"   Steps per epoch: {704}")
             print(f"   Pct start: {0.2}")
             print(f"   Div factor: {100.0}")
