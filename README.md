@@ -283,20 +283,17 @@ Estimated Total Size (MB): 45.74
 
 ### Training Progression
 The model shows excellent learning progression:
-1. **Fast Initial Learning**: 33% → 70% accuracy in first 10 epochs
+1. **Fast Initial Learning**: 19% → 40% accuracy in first 10 epochs
 2. **Steady Improvement**: Consistent gains through epoch 30
-3. **Fine-tuning Phase**: Gradual improvements to 87.2% peak
+3. **Fine-tuning Phase**: Gradual improvements to 83% peak
 4. **Stable Convergence**: Maintains high performance in final epochs
 
 ### OneCycle Benefits
-- **Faster Convergence**: Reached 80%+ accuracy by epoch 20
-- **Better Generalization**: 4.3% gap between best val (87.2%) and test (82.9%)
+- **Faster Convergence**: Reached 70%+ accuracy by epoch 30
 - **Stable Training**: Smooth learning curve without major fluctuations
 
 ### Model Efficiency
-- **Parameter Efficient**: 180K params achieving 87.2% validation accuracy
-- **Fast Training**: 21.9 minutes for 50 epochs on Apple Silicon
-- **Good Generalization**: Reasonable val/test gap indicates proper regularization
+- **Fast Training**: 16.5 minutes for 50 epochs on Apple Silicon
 
 ## 🔧 Troubleshooting
 
